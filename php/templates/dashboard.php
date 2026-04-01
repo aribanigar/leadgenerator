@@ -144,11 +144,36 @@
         <!-- Meta Form -->
         <form id="metaForm" class="account-form" onsubmit="addAccount(event,'meta')">
           <div class="info-box">
-            <strong>How to get your Meta credentials:</strong>
+            <strong>How to get your Meta credentials (5 min setup):</strong>
             <ol>
-              <li>Go to <em>business.facebook.com</em> → Settings → Ad Accounts → copy your <strong>Account ID</strong> (format: act_XXXXXXXXX)</li>
-              <li>Go to <em>developers.facebook.com</em> → Tools → Graph API Explorer</li>
-              <li>Select your app, click <strong>Generate Access Token</strong> with <code>leads_retrieval</code> + <code>pages_manage_metadata</code> permissions</li>
+              <li>
+                <strong>Ad Account ID —</strong>
+                Go to <a href="https://business.facebook.com" target="_blank">business.facebook.com</a>
+                → Settings → Ad Accounts → copy the number shown.
+                Paste it here with <code>act_</code> prefix → e.g. <code>act_1234567890</code>
+              </li>
+              <li>
+                <strong>Create a Developer App (once) —</strong>
+                Go to <a href="https://developers.facebook.com/apps" target="_blank">developers.facebook.com/apps</a>
+                → Create App → choose <em>Business</em> type → name it anything.
+                Then on the app dashboard → Add Product → <em>Lead Ads Retrieval</em> → Set Up.
+              </li>
+              <li>
+                <strong>Page Access Token —</strong>
+                Go to <a href="https://developers.facebook.com/tools/explorer" target="_blank">developers.facebook.com/tools/explorer</a>
+                → select your app from the top-right dropdown
+                → click <em>User or Page</em> → <strong>Get Page Access Token</strong>
+                → select your ViaKashmir Facebook Page
+                → grant permissions: <code>leads_retrieval</code>, <code>pages_manage_metadata</code>, <code>pages_read_engagement</code>
+                → click <strong>Generate Access Token</strong>.
+              </li>
+              <li>
+                <strong>Extend to 60-day token —</strong>
+                Click the <em>blue ⓘ icon</em> next to your token
+                → Open in Access Token Tool → click <strong>Extend Access Token</strong>
+                → copy the new token and paste it below.
+                <span style="color:#D96A10;font-weight:600">⚠ Do this step or it expires in 1 hour!</span>
+              </li>
             </ol>
           </div>
           <label>Account Label (nickname)
