@@ -315,6 +315,51 @@ body {
 .badge-google    { background: #FEE2E2; color: var(--google-color); }
 .badge-instagram { background: #F3E8FF; color: #9333EA; }
 
+/* ── OAuth Connect Section ───────────────────────────────────────────────── */
+.oauth-success {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--green-50); border: 1.5px solid var(--green-500);
+  color: var(--green-800); padding: 14px 20px; border-radius: 10px;
+  font-size: 14px; font-weight: 500;
+}
+.oauth-success svg { color: var(--green-600); flex-shrink: 0; }
+
+.connect-section {
+  padding: 28px 24px; display: flex; flex-direction: column;
+  align-items: center; text-align: center; gap: 14px;
+}
+.connect-platform-label {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 15px; font-weight: 600; color: var(--slate-900);
+}
+.connect-desc {
+  font-size: 13.5px; color: var(--slate-500); line-height: 1.65;
+  max-width: 340px;
+}
+.btn-connect-fb {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #1877F2; color: white;
+  padding: 13px 28px; border-radius: 8px;
+  font-size: 15px; font-weight: 600; text-decoration: none;
+  box-shadow: 0 4px 14px rgba(24,119,242,0.35);
+  transition: all 0.18s; border: none; cursor: pointer;
+}
+.btn-connect-fb:hover {
+  background: #1465d8; transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(24,119,242,0.4);
+}
+.connect-note {
+  font-size: 11.5px; color: var(--slate-400); line-height: 1.6;
+  max-width: 320px;
+}
+.connect-divider {
+  display: flex; align-items: center; gap: 12px;
+  padding: 0 24px 0; color: var(--slate-400); font-size: 12.5px;
+}
+.connect-divider::before, .connect-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--slate-200);
+}
+
 /* ── Status Select (inline in table) ──────────────────────────────────────── */
 .status-select {
   padding: 5px 8px; border-radius: 6px;

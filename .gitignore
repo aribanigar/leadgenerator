@@ -1,5 +1,18 @@
-node_modules/
-data/
-.env
+# ── PHP / Composer ────────────────────────────────────────────────────────────
+vendor/
+composer.lock
+
+# ── Sensitive config ─────────────────────────────────────────────────────────
+# config.php is committed with placeholders; never commit real credentials
+# to a public repo — use environment variables or server-side overrides instead.
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
 *.log
+logs/
+
+# ── OS / Editor ──────────────────────────────────────────────────────────────
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
