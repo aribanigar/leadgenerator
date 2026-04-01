@@ -4,7 +4,7 @@
   "type": "project",
   "require": {
     "php": ">=8.0",
-    "google/ads-googleads": "^22.0",
+    "google/ads-googleads": "^23.0",
     "google/auth": "^1.30"
   },
   "autoload": {

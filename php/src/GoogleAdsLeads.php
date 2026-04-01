@@ -2,7 +2,7 @@
 namespace ViaKashmir;
 
 use Google\Ads\GoogleAds\Lib\V18\GoogleAdsClientBuilder;
-use Google\Ads\GoogleAds\Util\V18\ResourceNames;
+use Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder;
 use Google\Ads\GoogleAds\V18\Services\SearchGoogleAdsRequest;
 
 /**
@@ -60,7 +60,7 @@ class GoogleAdsLeads
         $client = (new GoogleAdsClientBuilder())
             ->withDeveloperToken($developerToken)
             ->withOAuth2Credential(
-                (new \Google\Ads\GoogleAds\Lib\OAuth2TokenBuilder())
+                (new OAuth2TokenBuilder())
                     ->withClientId($clientId)
                     ->withClientSecret($clientSecret)
                     ->withRefreshToken($refreshToken)
