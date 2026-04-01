@@ -1,0 +1,16 @@
+Options -Indexes
+RewriteEngine On
+
+# Block direct access to sensitive files
+RewriteRule ^config\.php$       - [F,L]
+RewriteRule ^composer\.json$    - [F,L]
+RewriteRule ^composer\.lock$    - [F,L]
+RewriteRule ^src/               - [F,L]
+
+# Allow real files and directories (CSS, JS, images)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Route everything else through index.php
+RewriteRule ^ index.php [QSA,L]
