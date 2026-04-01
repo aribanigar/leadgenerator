@@ -35,8 +35,8 @@ return [
     //  5. Add products: "Facebook Login" + "Lead Ads Retrieval"
     //  6. Set App to "Live" mode (toggle at top of dashboard)
     'meta' => [
-        'app_id'               => '',    // ← paste your Facebook App ID here
-        'app_secret'           => '',    // ← paste your Facebook App Secret here
+        'app_id'               => '26265854649710429',
+        'app_secret'           => '83adb6068ca1b0405b5a8d5c1bd0dd0c',
         'webhook_verify_token' => 'viakashmir_webhook_2024',
     ],
 
