@@ -22,9 +22,22 @@ return [
         'charset' => 'utf8mb4',
     ],
 
-    // ── Meta / Facebook (optional defaults – override per account in dashboard)
+    // ── Meta / Facebook ─────────────────────────────────────────────────────
+    // Users connect via "Sign in with Facebook" button — no manual tokens needed.
+    // Developer only needs to set these two values ONCE:
+    //
+    // How to get App ID & Secret (5 min, done once by developer):
+    //  1. Go to developers.facebook.com → My Apps → Create App → Business type
+    //  2. Copy App ID and App Secret from Settings → Basic
+    //  3. Under Settings → Basic → add your domain to "App Domains"
+    //  4. Under Facebook Login → Settings → add Callback URL:
+    //     https://yourdomain.com/auth/meta/callback
+    //  5. Add products: "Facebook Login" + "Lead Ads Retrieval"
+    //  6. Set App to "Live" mode (toggle at top of dashboard)
     'meta' => [
-        'webhook_verify_token' => 'viakashmir_webhook_2024', // Set same in Meta Developer Portal
+        'app_id'               => '',    // ← paste your Facebook App ID here
+        'app_secret'           => '',    // ← paste your Facebook App Secret here
+        'webhook_verify_token' => 'viakashmir_webhook_2024',
     ],
 
     // ── Google Ads (optional defaults – override per account in dashboard)

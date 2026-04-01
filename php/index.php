@@ -3,9 +3,11 @@
  * ViaKashmir Lead CRM – Main Entry Point & Router
  * ─────────────────────────────────────────────────
  * All requests go through here (via .htaccess).
- * – /              → Dashboard SPA
- * – /api/*         → JSON API
- * – /api/webhooks/meta → Meta real-time webhook
+ * – /                      → Dashboard SPA
+ * – /api/*                 → JSON API
+ * – /auth/meta             → Start Facebook OAuth login
+ * – /auth/meta/callback    → Facebook OAuth callback (auto-saves token)
+ * – /api/webhooks/meta     → Meta real-time webhook
  */
 
 define('BASE_DIR', __DIR__);
@@ -30,6 +32,18 @@ date_default_timezone_set($cfg['app']['timezone'] ?? 'Asia/Kolkata');
 $uri    = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
 $uri    = '/' . trim($uri, '/');
 $method = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
+
+// ── Meta OAuth Routes ───────────────────────────────────────────────────────
+
+if ($uri === '/auth/meta') {
+    \ViaKashmir\MetaOAuth::redirectToFacebook();
+    exit;
+}
+
+if ($uri === '/auth/meta/callback') {
+    \ViaKashmir\MetaOAuth::handleCallback();
+    exit;
+}
 
 // Serve static public files (CSS, JS)
 if (preg_match('#^/public/(.+)$#', $uri, $m)) {
